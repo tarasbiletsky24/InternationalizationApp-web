@@ -25,7 +25,7 @@ export class SignInComponent implements OnInit {
       this.userService.SignIn(login, password).subscribe(responce => {
         if (responce) {
           this.eventService.signedIn();
-          this.router.navigate([""]);
+          this.router.navigate(["home"]);
         } else {
           this.message = 'Login or Password are incorect.';
         }
