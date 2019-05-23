@@ -1,0 +1,42 @@
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4CAF50;
+  }
+
+h2 {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+
+h4 {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+  }
+
+div {
+    margin-top: 10%;
+}
+
+.image-div {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin-left: 45%;
+  margin-right: 45%;
+  position: absolute;
+  bottom: 10px;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+}
+
+.main-container {
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}

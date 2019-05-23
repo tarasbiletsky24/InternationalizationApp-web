@@ -1,5 +1,7 @@
 <div>
-  <button *ngIf="!authorized" routerLink="/signIn">Sign In</button>
-  <button *ngIf="!authorized" routerLink="/signUp"> Sign Up</button>
-  <button *ngIf="authorized" routerLink="home" (click)="signOut()"> Log Out</button>
+  <button class="button" *ngIf="!authorized" routerLink="/signIn">Sign In</button>
+
+  <button class="button" *ngIf="!authorized" routerLink="/signUp"> Sign Up</button>
+
+  <button class="button" *ngIf="authorized" routerLink="/home" (click)="signOut()"> Log Out</button>
 </div>
