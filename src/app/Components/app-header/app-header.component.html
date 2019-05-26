@@ -1,7 +1,16 @@
 <div>
-  <button class="button" *ngIf="!authorized" routerLink="/signIn">Sign In</button>
+  <button type="button" class="btn btn-primary"
+    routerLink="/home">Home</button>
 
-  <button class="button" *ngIf="!authorized" routerLink="/signUp"> Sign Up</button>
+  <button type="button" class="btn btn-primary" *ngIf="!authorized" [disabled]="!serverWorking"
+    routerLink="/signIn">Sign In</button>
 
-  <button class="button" *ngIf="authorized" routerLink="/home" (click)="signOut()"> Log Out</button>
+  <button type="button" class="btn btn-primary" *ngIf="authorized" [disabled]="!serverWorking"
+    routerLink="/translate">Translate</button>
+
+  <button type="button" class="btn btn-primary" *ngIf="!authorized" [disabled]="!serverWorking" routerLink="/signUp">
+    Sign Up</button>
+
+  <button type="button" class="btn btn-primary" *ngIf="authorized" [disabled]="!serverWorking" routerLink="/home"
+    (click)="signOut()"> Log Out</button>
 </div>

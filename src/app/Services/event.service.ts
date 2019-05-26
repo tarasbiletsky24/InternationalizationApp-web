@@ -10,6 +10,8 @@ export class EventService {
 
   public signOut = new Subject();
 
+  public serverWork = new Subject();
+
   constructor() { }
 
   public signedIn() {
@@ -18,5 +20,9 @@ export class EventService {
 
   public signedOut() {
     this.signOut.next();
+  }
+
+  public serverWorking(value: boolean) {
+    this.serverWork.next(value);
   }
 }

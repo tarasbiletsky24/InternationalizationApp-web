@@ -12,6 +12,7 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
   private subscriptions = [];
 
   public authorized = false;
+  public serverWorking = false;
 
   constructor(
     private router: Router,
@@ -26,14 +27,17 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.eventService.signOut.subscribe(() => {
       this.authorized = false;
     }));
+
+    this.subscriptions.push(this.eventService.serverWork.subscribe((responce: boolean) => {
+      this.serverWorking = responce;
+    }))
   }
 
   ngOnDestroy() {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
   }
 
-  public signOut()
-  {
+  public signOut() {
     this.eventService.signedOut();
   }
 
