@@ -1,27 +1,26 @@
+<h1>Translate</h1>
+<br>
+<div>
+  <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
+  </language-dropdown>
+</div>
+<br>
+<div>
+  <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
+  </language-dropdown>
+</div>
+<br>
+<div>
+  <label>Add your vocabularies (Currently unavailable)</label>
+  <input>
+</div>
+<br>
+<pre class="card card-block card-header mb-3">GitHub Owner Name: {{gitHubRepositoryOwnerName | json}}</pre>
 
-  <h1>Translate</h1>
-  <div>
-    <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
-    </language-dropdown>
-  </div>
-  <br>
-  <div>
-    <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
-    </language-dropdown>
-  </div>
-  <br>
-  <div>
-    <label>Add your vocabularies (Currently unavailable)</label>
-    <input>
-  </div>
-  <br>
-  <pre class="card card-block card-header mb-3">GitHub Owner Name: {{gitHubRepositoryOwnerName | json}}</pre>
+<pre class="card card-block card-header mb-3">GitHub Repository Name: {{gitHubRepositoryName | json}}</pre>
 
-  <pre class="card card-block card-header mb-3">GitHub Repository Name: {{gitHubRepositoryName | json}}</pre>
+<pre class="card card-block card-header mb-3">GitHub Repository Link: {{gitHubLink | json}}</pre>
 
-  <pre class="card card-block card-header mb-3">GitHub Repository Link: {{gitHubLink | json}}</pre>
-
-  <input #link [(ngModel)]="gitHubLink" class="form-control" (change)="gitHubLinkChanged(link.value)">
-
-  <button type="button" class="btn btn-primary" (click)="translate()">Translate</button>
-
+<input #link [(ngModel)]="gitHubLink" class="form-control" (change)="gitHubLinkChanged(link.value)">
+<br>
+<button type="button" class="btn btn-primary" (click)="translate()">Translate</button>

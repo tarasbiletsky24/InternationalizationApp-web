@@ -1,6 +1,8 @@
-<div>
-  <button type="button" class="btn btn-primary"
-    routerLink="/home">Home</button>
+<div class=header>
+
+  <button type="button" class="home" routerLink="/home">Internationalization Service</button>
+
+  <button type="button" class="btn btn-primary" routerLink="/home">Home</button>
 
   <button type="button" class="btn btn-primary" *ngIf="!authorized" [disabled]="!serverWorking"
     routerLink="/signIn">Sign In</button>
