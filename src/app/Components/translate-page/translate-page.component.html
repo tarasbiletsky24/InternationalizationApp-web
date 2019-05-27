@@ -1,6 +1,12 @@
 <h1>Translate</h1>
-<input>
-<button type="button" class="btn btn-primary"
-        tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-  Simple demo
-</button>
+<div>
+  <label>Current language of project</label>
+  <input #current>
+  <language-dropdown Title="Select language" (select)="current.value = $event"></language-dropdown>
+</div>
+<br>
+<div>
+  <label>Language of project for translation</label>
+  <input #translateTo>
+  <language-dropdown Title="Select language" (select)="translateTo.value = $event"></language-dropdown>
+</div>
