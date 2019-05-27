@@ -1,12 +1,15 @@
 <h1>Translate</h1>
 <div>
-  <label>Current language of project</label>
-  <input #current>
-  <language-dropdown Title="Select language" (select)="current.value = $event"></language-dropdown>
+  <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
+  </language-dropdown>
 </div>
 <br>
 <div>
-  <label>Language of project for translation</label>
-  <input #translateTo>
-  <language-dropdown Title="Select language" (select)="translateTo.value = $event"></language-dropdown>
+  <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
+  </language-dropdown>
 </div>
+
+<pre class="card card-block card-header mb-3">GitHub Repository Link: {{gitHubLink | json}}</pre>
+<input [(ngModel)]="gitHubLink"
+       [typeahead]="states"
+       class="form-control">

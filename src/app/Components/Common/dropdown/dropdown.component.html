@@ -1,14 +1,15 @@
+<label>{{ Title }}</label>
+<input #language>
 <div class="btn-group" dropdown>
   <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-          aria-controls="dropdown-basic">
-    {{ Title }} <span class="caret"></span>
+    aria-controls="dropdown-basic">
+    Select language <span class="caret"></span>
   </button>
-  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-      role="menu" aria-labelledby="button-basic">
-    <li #English role="menuitem"><a class="dropdown-item" (click)="selected('English')">English</a></li>
-    <li role="menuitem"><a class="dropdown-item" (click)="selected('Ukrainian')">Ukrainian</a></li>
+  <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+    <li #English role="menuitem"><a class="dropdown-item" (click)="selected('English'); language.value='English'">English</a></li>
+    <li role="menuitem"><a class="dropdown-item" (click)="selected('Ukrainian'); language.value='Ukrainian'">Ukrainian</a></li>
     <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" (click)="selected('Undefined')">Undefined</a>
+    <li role="menuitem"><a class="dropdown-item" (click)="selected('Undefined'); language.value='Undefined'">Undefined</a>
     </li>
   </ul>
 </div>

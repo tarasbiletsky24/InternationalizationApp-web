@@ -1,8 +1,11 @@
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './Components/app.component/app.component';
@@ -29,9 +32,11 @@ import { LanguageDropdownComponent } from './Components/Common/dropdown/dropdown
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     TooltipModule.forRoot(),
     ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
+    TypeaheadModule.forRoot(),
   ],
   providers: [
     BrowserModule,
