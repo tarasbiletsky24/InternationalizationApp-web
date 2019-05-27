@@ -17,6 +17,7 @@ import { MainPageComponent } from './Components/main-page/main-page.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { TranslatePageComponent } from './Components/translate-page/translate-page.component';
 import { LanguageDropdownComponent } from './Components/Common/dropdown/dropdown.component';
+import { AppFooterComponent } from './Components/app-footer/app-footer.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { LanguageDropdownComponent } from './Components/Common/dropdown/dropdown
     SignUpComponent,
     TranslatePageComponent,
     LanguageDropdownComponent,
+    AppFooterComponent,
   ],
   imports: [
     BrowserModule,

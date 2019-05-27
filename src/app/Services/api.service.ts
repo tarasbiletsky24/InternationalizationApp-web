@@ -14,7 +14,11 @@ export class ApiService {
     return this.http.get<boolean>(this.url + `check`);
   }
 
-  public checkGitHubRepository(owner: string, repositoryName: string ) {
-    return this.http.get(this.url+`repo/${owner}/${repositoryName}`);
+  public checkGitHubRepository(owner: string, repositoryName: string) {
+    return this.http.get(this.url + `repo/${owner}/${repositoryName}`);
+  }
+
+  public startTranslate() {
+
   }
 }

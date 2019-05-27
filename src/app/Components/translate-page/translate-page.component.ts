@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
   selector: 'app-translate-page',
@@ -9,10 +10,14 @@ export class TranslatePageComponent implements OnInit {
 
   public translateTo: string;
   public translateFrom: string;
+  public gitHubRepositoryOwnerName: string;
   public gitHubRepositoryName: string;
   public gitHubLink: string;
 
-  constructor() { }
+  private gitHubRepositoryNameRegExp = new RegExp(/\/([\w -]*)$/);
+  private gitHubRepositoryOwnerNameRegExp = new RegExp(/\/(.[\w -]*)\//);
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
@@ -23,6 +28,15 @@ export class TranslatePageComponent implements OnInit {
 
   public setTranslateFrom(value: string) {
     this.translateFrom = value;
+  }
+
+  public gitHubLinkChanged(gitHubLink: string) {
+      this.gitHubRepositoryOwnerName = gitHubLink.match(this.gitHubRepositoryOwnerNameRegExp)[1];
+      this.gitHubRepositoryName = gitHubLink.match(this.gitHubRepositoryNameRegExp)[1];
+  }
+
+  public translate() {
+    this.apiService.startTranslate(); // not implemented yet
   }
 
 }
