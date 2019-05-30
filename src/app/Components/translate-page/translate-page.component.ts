@@ -13,6 +13,9 @@ export class TranslatePageComponent implements OnInit {
   public gitHubRepositoryOwnerName: string;
   public gitHubRepositoryName: string;
   public gitHubLink: string;
+  public loading = false;
+  public result = false;
+  public message: string;
 
   private gitHubRepositoryNameRegExp = new RegExp(/\/([\w -]*)$/);
   private gitHubRepositoryOwnerNameRegExp = new RegExp(/\/(.[\w -]*)\//);
@@ -36,7 +39,14 @@ export class TranslatePageComponent implements OnInit {
   }
 
   public translate() {
-    this.apiService.startTranslate(); // not implemented yet
+    this.loading = true;
+    this.apiService.startTranslate(this.gitHubLink, this.translateFrom, this.translateTo).subscribe(
+      responce => {
+        this.message = responce;
+        this.result = true;
+        this.loading = false;
+      }
+    )
   }
 
 }

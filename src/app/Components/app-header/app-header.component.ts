@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventService } from 'src/app/Services/event.service';
+import { UserService } from 'src/app/Services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,8 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private eventService: EventService
+    private eventService: EventService,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -39,6 +41,11 @@ export class AppHeaderComponent implements OnInit, OnDestroy {
 
   public signOut() {
     this.eventService.signedOut();
+  }
+
+  public register()
+  {
+    this.userService.SignUp("taras@gmail.com", "t", "123").subscribe();
   }
 
 }

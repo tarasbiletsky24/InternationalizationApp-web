@@ -1,26 +1,55 @@
-<h1>Translate</h1>
-<br>
-<div>
-  <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
-  </language-dropdown>
-</div>
-<br>
-<div>
-  <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
-  </language-dropdown>
-</div>
-<br>
-<div>
-  <label>Add your vocabularies (Currently unavailable)</label>
-  <input>
-</div>
-<br>
-<pre class="card card-block card-header mb-3">GitHub Owner Name: {{gitHubRepositoryOwnerName | json}}</pre>
+<div *ngIf="!loading && !result">
+  <h1>Translate</h1>
+  <br>
+  <div>
+    <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
+    </language-dropdown>
+  </div>
+  <br>
+  <div>
+    <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
+    </language-dropdown>
+  </div>
+  <br>
+  <div>
+    <label>Add your vocabularies (Currently unavailable)</label>
+    <input>
+  </div>
+  <br>
+  <pre class="card card-block card-header mb-3">GitHub Owner Name: {{gitHubRepositoryOwnerName | json}}</pre>
 
-<pre class="card card-block card-header mb-3">GitHub Repository Name: {{gitHubRepositoryName | json}}</pre>
+  <pre class="card card-block card-header mb-3">GitHub Repository Name: {{gitHubRepositoryName | json}}</pre>
 
-<pre class="card card-block card-header mb-3">GitHub Repository Link: {{gitHubLink | json}}</pre>
+  <pre class="card card-block card-header mb-3">GitHub Repository Link: {{gitHubLink | json}}</pre>
 
-<input #link [(ngModel)]="gitHubLink" class="form-control" (change)="gitHubLinkChanged(link.value)">
-<br>
-<button type="button" class="btn btn-primary" (click)="translate()">Translate</button>
+  <input #link [(ngModel)]="gitHubLink" class="form-control" (change)="gitHubLinkChanged(link.value)">
+  <br>
+  <button type="button" class="btn btn-primary" (click)="translate()">Translate</button>
+</div>
+
+<div *ngIf="loading">
+  <h1 style="margin-top: 100px;">
+    Your project is translating. Please wait for result.
+  </h1>
+
+  <progressbar style="width: 100%; height: 50px; margin-top: 100px" class="progress-striped active" max="200"
+    [value]="200" [striped]="true" [animate]="true">
+  </progressbar>
+</div>
+
+<div *ngIf="!loading && result" style="text-align: center; margin-top:200px;">
+  <h1>
+    <p>
+      Dear {{ gitHubRepositoryOwnerName }},
+    </p>
+    <p>
+      {{ message }}
+    </p>
+    <p *ngIf="message == 'your project has been succesfully translated and internationalized.'">
+      <a [href]="gitHubLink+'/tree/InternationalizationApp'">
+        Check your GitHub repository.
+      </a>
+    </p>
+
+  </h1>
+</div>

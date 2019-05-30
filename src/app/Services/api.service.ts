@@ -18,7 +18,10 @@ export class ApiService {
     return this.http.get(this.url + `repo/${owner}/${repositoryName}`);
   }
 
-  public startTranslate() {
+  public startTranslate(repositoryLink: string, from: string, to: string) {
+    
+    var body = { repositoryLink: repositoryLink, from: from, to: to };
 
+    return this.http.post<string>(this.url + `translate`, body);
   }
 }

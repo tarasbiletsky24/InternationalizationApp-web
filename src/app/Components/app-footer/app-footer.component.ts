@@ -24,21 +24,23 @@ export class AppFooterComponent implements OnInit, OnDestroy {
       this.serverRunning = responce;
       this.eventService.serverWorking(responce);
     },
-    () => {
-      this.serverRunning = false;
-      this.eventService.serverWorking(false);
-    });
-
-    interval(5000).pipe(takeUntil(this.destroy)).subscribe(x => {
-      this.apiService.CheckServer().subscribe(responce => {
-        this.serverRunning = responce;
-        this.eventService.serverWorking(responce);
-      },
       () => {
         this.serverRunning = false;
         this.eventService.serverWorking(false);
-      })
-    });
+      });
+
+    interval(5000).pipe(takeUntil(this.destroy)).subscribe(
+      () => {
+        this.apiService.CheckServer().subscribe(responce => {
+          this.serverRunning = responce;
+          this.eventService.serverWorking(responce);
+        },
+          (error) => {
+            console.log(error);
+            this.serverRunning = false;
+            this.eventService.serverWorking(false);
+          })
+      });
   }
 
   ngOnDestroy() {

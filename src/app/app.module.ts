@@ -2,6 +2,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -39,6 +40,7 @@ import { AppFooterComponent } from './Components/app-footer/app-footer.component
     ButtonsModule.forRoot(),
     BsDropdownModule.forRoot(),
     TypeaheadModule.forRoot(),
+    ProgressbarModule.forRoot(),
   ],
   providers: [
     BrowserModule,
