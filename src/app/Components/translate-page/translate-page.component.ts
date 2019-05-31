@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Services/api.service';
+import { FileUploader } from 'ng2-file-upload';
 
 @Component({
   selector: 'app-translate-page',
@@ -16,6 +17,8 @@ export class TranslatePageComponent implements OnInit {
   public loading = false;
   public result = false;
   public message: string;
+
+  public uploader: FileUploader = new FileUploader({ url: "api/your_upload", removeAfterUpload: false, autoUpload: true });
 
   private gitHubRepositoryNameRegExp = new RegExp(/\/([\w -]*)$/);
   private gitHubRepositoryOwnerNameRegExp = new RegExp(/\/(.[\w -]*)\//);

@@ -12,8 +12,8 @@
   </div>
   <br>
   <div>
-    <label>Add your vocabularies (Currently unavailable)</label>
-    <input>
+    <label style="margin-right: 30px">Add your vocabularies</label>
+    <input ng2FileSelect type="file" accept=".txt" [uploader]="uploader"/>
   </div>
   <br>
   <pre class="card card-block card-header mb-3">GitHub Owner Name: {{gitHubRepositoryOwnerName | json}}</pre>

@@ -3,6 +3,7 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { ProgressbarModule } from 'ngx-bootstrap/progressbar';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -41,6 +42,7 @@ import { AppFooterComponent } from './Components/app-footer/app-footer.component
     BsDropdownModule.forRoot(),
     TypeaheadModule.forRoot(),
     ProgressbarModule.forRoot(),
+    FileUploadModule,
   ],
   providers: [
     BrowserModule,
