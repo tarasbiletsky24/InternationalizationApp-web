@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AppFooterComponent } from './app-footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppFooterComponent', () => {
   let component: AppFooterComponent;
@@ -8,7 +9,8 @@ describe('AppFooterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AppFooterComponent ]
+      declarations: [ AppFooterComponent ],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));
@@ -20,6 +22,6 @@ describe('AppFooterComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBe(component);
   });
 });
