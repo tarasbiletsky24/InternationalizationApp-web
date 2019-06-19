@@ -1,18 +1,18 @@
 <div *ngIf="!loading && !result">
-  <h1>Translate</h1>
+  <h1>Перекласти</h1>
   <br>
   <div>
-    <language-dropdown Title="Select current project language" (select)="setTranslateFrom($event)">
+    <language-dropdown Title="Select current project language" (select)="setПерекластиFrom($event)">
     </language-dropdown>
   </div>
   <br>
   <div>
-    <language-dropdown Title="Select project language for translation" (select)="setTranslateTo($event)">
+    <language-dropdown Title="Select project language for translation" (select)="setПерекластиTo($event)">
     </language-dropdown>
   </div>
   <br>
   <div>
-    <label style="margin-right: 30px">Add your vocabularies</label>
+    <label style="margin-right: 30px">Додайте словники</label>
     <input ng2FileSelect type="file" accept=".txt" [uploader]="uploader"/>
   </div>
   <br>
@@ -24,7 +24,7 @@
 
   <input #link [(ngModel)]="gitHubLink" class="form-control" (change)="gitHubLinkChanged(link.value)">
   <br>
-  <button type="button" class="btn btn-primary" (click)="translate()">Translate</button>
+  <button type="button" class="btn btn-primary" (click)="translate()">Перекласти</button>
 </div>
 
 <div *ngIf="loading">

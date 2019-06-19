@@ -1,34 +1,34 @@
 <div class=header>
 
-  <button type="button" class="home" routerLink="/home" (click)="register()">Internationalization Service</button>
+  <button type="button" class="home" routerLink="/home" (click)="register()">Служба інтернаціоналізації</button>
 
-  <button type="button" class="btn btn-primary" routerLink="/home">Home</button>
+  <button type="button" class="btn btn-primary" routerLink="/home">Головна</button>
 
   <button type="button" class="btn btn-primary" *ngIf="!authorized" [disabled]="!serverWorking"
-    routerLink="/signIn">Sign In</button>
+    routerLink="/signIn">Увійти</button>
 
   <button type="button" class="btn btn-primary" *ngIf="authorized" [disabled]="!serverWorking"
-    routerLink="/translate">Translate</button>
+    routerLink="/translate">Перекласти</button>
 
   <button type="button" class="btn btn-primary" *ngIf="!authorized" [disabled]="!serverWorking" routerLink="/signUp">
     Sign Up</button>
 
   <button type="button" class="btn btn-primary" *ngIf="authorized" [disabled]="!serverWorking" routerLink="/home"
-    (click)="signOut()"> Log Out</button>
+    (click)="signOut()">Вийти</button>
 
   <div style="display: inline-block; float: right;">
     <div *ngIf="serverWorking">
       <div class=image-div>
         <img src="assets/server_up.png">
       </div>
-      <span>Server working correctly.</span>
+      <span>Сервер працює правильно.</span>
     </div>
 
     <div *ngIf="!serverWorking">
       <div class=image-div>
         <img src="assets/server_down.svg">
       </div>
-      <span>Server temporarily unavailable.</span>
+      <span>Сервер тимчасово недоступний.</span>
     </div>
   </div>
 </div>

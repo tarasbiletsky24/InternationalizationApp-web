@@ -4,19 +4,19 @@
   </div>
 
   <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input #login type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Ім'я користувача</b></label>
+    <input #login type="text" placeholder="Enter Ім'я користувача" name="uname" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input #password type="password" placeholder="Enter Password" name="psw" required>
+    <label for="psw"><b>Пароль</b></label>
+    <input #password type="password" placeholder="Enter Пароль" name="psw" required>
 
-    <button (click)="signIn(login.value, password.value)">Sign In</button>
+    <button (click)="signIn(login.value, password.value)">Увійти</button>
     <label class=error-message-text>
       {{ message }}
     </label>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button routerLink="/home" type="button" class="cancelbtn">Back</button>
+    <button routerLink="/home" type="button" class="cancelbtn">Назад</button>
   </div>
 </div>
